@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components{
+    .icon{
+        @apply p-2 hover:bg-zinc-700 rounded-full transition;
+    }
+}
