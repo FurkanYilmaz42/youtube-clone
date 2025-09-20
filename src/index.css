@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
+
+@theme{
+    --color-grey: #3f3f3f;
+}
+
+@layer base{
+    button{
+        @apply cursor-pointer;
+    }
+
+    body{
+        @apply bg-black text-white;
+    }
+}
+
 @layer components{
     .icon{
         @apply p-2 hover:bg-zinc-700 rounded-full transition;
+    }
+
+    .page{
+        @apply h-[calc(100vh-56px)] w-full flex-1 py-6 px-4
     }
 }
