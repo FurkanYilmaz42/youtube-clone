@@ -14,7 +14,7 @@ const Shorts = ({data}) => {
       </div>
 
       <div className="flex gap-4 pb-4 overflow-x-auto">
-        {data.map((short,key)=> <Link to={`/watch?v=${short.videoId}`} key={key} className="group">
+        {data?.map((short,key)=> <Link to={`/watch?v=${short.videoId}`} key={key} className="group">
         <div className="w-48 h-80 relative overflow-hidden rounded-2 bg-zinc-900">
           <img src={short.thumbnail[1].url} className="size-full object-cover group-hover:scale-105 transition"/>
 
