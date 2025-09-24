@@ -5,3 +5,4 @@
 - Tailwindscss
 - React-router-dom
 - React-icons
+- Millify

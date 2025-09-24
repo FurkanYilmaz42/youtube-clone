@@ -4,10 +4,22 @@ import { IoIosVideocam } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { useSidebar } from "../../context/Sidebar-Context";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
  const {toggleSidebar} = useSidebar();
+  const navigate = useNavigate()
+
+ const handelSubmit = (e) => {
+    e.preventDefault();
+
+    const text = e.target[0].value.trim()
+
+    if(text){
+      navigate(`/results?search_query=${text}`)
+    }
+ };
 
   return (
     <header className="flex justify-between gap-4 px-4 h-14">
@@ -26,7 +38,7 @@ const Header = () => {
       {/* Orta Kisim */}
 
       <div className="flex-1 max-w-[728px] mx-4 flex justify-center items-center">
-        <form className="flex w-full max-w-[640px] items-center ">
+        <form className="flex w-full max-w-[640px] items-center " onSubmit={handelSubmit}>
           <div className="flex flex-1">
             <input type="text" className="w-full h-10 p-4 bg-[#121212] border border-[#3f3f3f] rounded-l-full text-white placeholder:text-[#aaaaa] focus:border-[#1c62b9] outline-none"
             placeholder="Ara"/>

@@ -7,7 +7,7 @@ const api = axios.create({
     'x-rapidapi-host': 'yt-api.p.rapidapi.com',
   },
   params:{
-    geo:"TR",
+    // geo:"TR",
     lang:"tr"
   }
 });
