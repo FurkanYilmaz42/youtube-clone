@@ -4,9 +4,13 @@ import { IoIosVideocam } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { useSidebar } from "../../context/Sidebar-Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 
 const Header = () => {
+
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("search_query");
 
  const {toggleSidebar} = useSidebar();
   const navigate = useNavigate()
@@ -40,8 +44,12 @@ const Header = () => {
       <div className="flex-1 max-w-[728px] mx-4 flex justify-center items-center">
         <form className="flex w-full max-w-[640px] items-center " onSubmit={handelSubmit}>
           <div className="flex flex-1">
-            <input type="text" className="w-full h-10 p-4 bg-[#121212] border border-[#3f3f3f] rounded-l-full text-white placeholder:text-[#aaaaa] focus:border-[#1c62b9] outline-none"
-            placeholder="Ara"/>
+            <input
+              type="text"
+              defaultValue={query}
+              className="w-full h-10 px-4 bg-[#121212] border border-grey rounded-l-full text-white placeholder:text-[#aaaaaa] focus:border-[#1c62b9] outline-none"
+              placeholder="Ara"
+            />
             
             <button className="w-16 h-10 bg-[#222222] border border-[#3f3f3f] rounded-r-full flex justify-center items-center hover:bg-[#3f3f3f] transition">
               <CiSearch className="text-xl text-white"/>

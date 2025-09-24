@@ -1,6 +1,10 @@
+import Spinner from "./spinner-loader"
+
 const BasicLoader = () => {
   return (
-    <div>BasicLoader</div>
+    <div className="page grid place-items-center">
+      <Spinner />
+    </div>
   )
 }
 

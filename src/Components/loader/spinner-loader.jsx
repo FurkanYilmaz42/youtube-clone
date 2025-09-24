@@ -1,7 +1,10 @@
+import { CgSpinner } from "react-icons/cg"
 
-const Spinner = () => {
+const Spinner = ({designs}) => {
   return (
-    <div>Spinner</div>
+    <div className={`flex justify-center items-center my-8 `}>
+      <CgSpinner  className="text-3xl text-red-500 animate-spin"/>
+    </div>
   )
 }
 
